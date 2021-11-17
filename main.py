@@ -14,16 +14,9 @@ textcol = f"{Fore.BLACK}"
 
 def head():
     print(f"""{Fore.RED}\n\n
-                {Fore.RESET}         ███████╗██╗      ██████╗  ██████╗ ██████╗     ███████╗███╗   ███╗███████╗   
-                {Fore.RESET}         ██╔════╝██║     ██╔═══██╗██╔═══██╗██╔══██╗    ██╔════╝████╗ ████║██╔════╝
-                {Fore.RESET}         █████╗  ██║     ██║   ██║██║   ██║██║  ██║    ███████╗██╔████╔██║███████╗
-                {Fore.RESET}         ██╔══╝  ██║     ██║   ██║██║   ██║██║  ██║    ╚════██║██║╚██╔╝██║╚════██║
-                {Fore.RESET}         ██║     ███████╗╚██████╔╝╚██████╔╝██████╔╝    ███████║██║ ╚═╝ ██║███████║
-                {Fore.RESET}         ╚═╝     ╚══════╝ ╚═════╝  ╚═════╝ ╚═════╝     ╚══════╝╚═╝     ╚═╝╚══════╝
-                {Fore.RESET} 
-                {Fore.RESET}                            [ > FLOOD SMS BY Oreo Young Man < ]                                   
+                {Fore.RESET}                            [ > SMS Spam BY Oreo Young Man < ]                                   
                 {Fore.RESET}                                            
-                {Fore.RESET}               [+] | Usage : [PHONE] [AMOUNT]
+                {Fore.RESET}               [+] | Usage : [PHONE_NUMBER] [AMOUNT(SECOND)]
                 {Fore.RESET}               [+] | METHOD : 17 API                      
                                                                                                                    """)
         
