@@ -10,5 +10,5 @@ Hey, this is a quick Spam Mail bot i made that will spam a Mail with bots and re
 # How to run ? <br>
 ```python main.py```<br>
 Python: https://www.python.org/downloads/<br>
-Or follow this link : https://replit.com/@RealNattawattHo/mail-spam<br>
+Or follow this link : https://replit.com/@RealNattawattHo/sms-spam-version-stable<br>
 ## Make By Oreo Young Man (Nattawatt)
